@@ -126,30 +126,38 @@
     .rsvp{background:var(--sage-deep);color:#fff}
     .rsvp h2,.rsvp .section-label{color:#fff}
     .rsvp .lead{color:#e9efe5}
-    form{max-width:720px;margin:42px auto 0;display:grid;gap:14px}
-    input,select,textarea{
-      width:100%;
+    .rsvp-box{
+      max-width:720px;
+      margin:42px auto 0;
+      padding:34px 28px;
       border:1px solid rgba(255,255,255,.35);
-      background:rgba(255,255,255,.96);
-      color:var(--text);
-      padding:15px 16px;
-      font:400 .95rem 'Manrope',sans-serif;
-      border-radius:0;
+      background:rgba(255,255,255,.05);
     }
-    textarea{min-height:120px;resize:vertical}
-    button{
-      margin-top:6px;
-      padding:15px 24px;
+    .rsvp-box p{
+      margin:0 0 22px;
+      color:#e9efe5;
+      line-height:1.7;
+      font-size:.95rem;
+    }
+    .rsvp-btn{
+      display:inline-block;
+      padding:15px 26px;
       border:1px solid #fff;
-      background:transparent;
-      color:#fff;
+      background:#fff;
+      color:var(--sage-deep);
+      text-decoration:none;
       font:500 .78rem 'Manrope',sans-serif;
       letter-spacing:.14em;
       text-transform:uppercase;
-      cursor:pointer;
       transition:.2s;
     }
-    button:hover{background:#fff;color:var(--sage-deep)}
+    .rsvp-btn:hover{background:transparent;color:#fff}
+    .rsvp-note{
+      margin-top:16px;
+      font-size:.78rem;
+      opacity:.82;
+      letter-spacing:.03em;
+    }
     footer{background:#3f503f;color:#edf2ea;text-align:center;padding:34px 20px;font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.05em}
     @media(max-width:780px){
       section{padding:72px 18px}
@@ -232,20 +240,26 @@
       <div class="section-label">Conferma presenza</div>
       <h2>Ci sarete?</h2>
       <p class="lead">È gradita gentile conferma entro febbraio 2027.</p>
-      <form action="mailto:mic.conte94@gmail.com" method="post" enctype="text/plain">
-        <input name="Nome e cognome" placeholder="Nome e cognome" required>
-        <select name="Presenza" required>
-          <option value="">Parteciperai?</option>
-          <option>Sì, con piacere</option>
-          <option>No, purtroppo non potrò esserci</option>
-        </select>
-        <input type="number" min="1" name="Numero persone" placeholder="Quante persone sarete?">
-        <textarea name="Note" placeholder="Allergie, intolleranze o altre note utili"></textarea>
-        <button type="submit">Invia conferma</button>
-      </form>
+      <div class="rsvp-box">
+        <p>Con il modulo potrete indicarci se sarete presenti, quante persone parteciperanno e segnalarci eventuali allergie o intolleranze.</p>
+        <a class="rsvp-btn" id="rsvpButton" href="#" target="_blank" rel="noopener">Conferma la tua presenza</a>
+        <div class="rsvp-note">Il modulo RSVP sarà disponibile qui a breve.</div>
+      </div>
     </div>
   </section>
 
   <footer>Michela & Antonio · 22 maggio 2027</footer>
+  <script>
+    const GOOGLE_FORM_URL = "";
+    const rsvpButton = document.getElementById("rsvpButton");
+    if (GOOGLE_FORM_URL) {
+      rsvpButton.href = GOOGLE_FORM_URL;
+    } else {
+      rsvpButton.addEventListener("click", function(e){
+        e.preventDefault();
+        alert("Il modulo RSVP sarà disponibile a breve.");
+      });
+    }
+  </script>
 </body>
 </html>
