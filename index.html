@@ -178,15 +178,18 @@
       left:50%;
       transform:translateX(-50%);
       width:min(1180px,calc(100% - 40px));
-      height:3px;
-      background:repeating-linear-gradient(
-        90deg,
-        #6f8668 0 82px,
-        transparent 82px 108px,
-        #91a789 108px 142px,
-        transparent 142px 166px
-      );
-      opacity:.95;
+      height:1px;
+      background:#91a789;
+      opacity:.9;
+    }
+    section::after{
+      content:"";
+      position:absolute;
+      top:-2px;
+      left:calc(50% - min(590px,calc(50% - 20px)) + 8%);
+      width:92px;
+      height:5px;
+      background:#6f8668;
     }
     .section-head{
       max-width:820px;
@@ -336,8 +339,8 @@
 
     /* FOOTER */
     footer{
-      background:#7f9277;
-      color:#f3f0e6;
+      background:#dce5d7;
+      color:var(--wine-dark);
       padding:54px 0 58px;
       text-align:center;
     }
@@ -411,6 +414,7 @@
           <p><a class="venue-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+San+Giulio+Cassano+Magnago"><strong>Chiesa di San Giulio</strong></a></p>
           <p>Cassano Magnago (VA)</p>
           <p>Ore 14:30</p>
+          <p class="parking">Dove parcheggiare: <a class="venue-link" target="_blank" rel="noopener" href="https://google.it/maps/place/Piazzetta+Don+Filippo+Spina,+21012+Cassano+Magnago+VA/@45.6745651,8.8289525,709m/data=!3m1!1e3!4m6!3m5!1s0x478689ab7544237f:0x86bc73a06a038977!8m2!3d45.674735!4d8.8270889!16s%2Fg%2F119tjyy25?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D">Parcheggio</a></p>
         </article>
 
         <article class="program-card">
