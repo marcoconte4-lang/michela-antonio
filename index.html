@@ -10,18 +10,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Italiana&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root{
-      --sage:#81927c;
-      --sage-deep:#526451;
-      --sage-soft:#dfe7db;
-      --sage-pale:#eef2eb;
-      --ivory:#f8f6ef;
-      --paper:#fffdf8;
-      --text:#435142;
-      --line:rgba(82,100,81,.18);
+      --sage:#8d9f88;
+      --sage-deep:#4d604d;
+      --sage-mid:#aebba9;
+      --sage-soft:#dfe7dc;
+      --sage-pale:#f0f4ee;
+      --ivory:#f7f3e9;
+      --paper:#fffdf7;
+      --text:#3f4d40;
+      --line:rgba(77,96,77,.16);
+      --shadow:0 22px 55px rgba(59,76,59,.16);
+      --shadow-soft:0 12px 30px rgba(59,76,59,.11);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--ivory);color:var(--text);font-family:'Manrope',sans-serif;font-weight:300}
+    body{margin:0;background:
+      radial-gradient(circle at 15% 10%,rgba(174,187,169,.14),transparent 26%),
+      linear-gradient(180deg,var(--ivory),#f3efe5 58%,var(--ivory));
+      color:var(--text);font-family:'Manrope',sans-serif;font-weight:300}
     a{color:inherit}
     .hero{
       min-height:100svh;
@@ -34,17 +40,12 @@
         url('WhatsApp%20Image%202026-09-26%20at%2014.45.48%20(1).jpeg') center 48%/cover no-repeat;
       color:#fff;
     }
-    .hero::after{
-      content:"";
-      position:absolute;inset:18px;
-      border:1px solid rgba(255,255,255,.55);
-      pointer-events:none;
-    }
+    .hero::after{display:none}
     .hero-content{position:relative;z-index:1;text-align:center;max-width:900px;text-shadow:0 2px 22px rgba(0,0,0,.22)}
     .kicker{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500}
     h1,h2,h3{margin:0;font-weight:400}
     h1{
-      font-family:'Italiana',serif;
+      font-family:'Cormorant Garamond',serif;
       font-size:clamp(3.6rem,10vw,8rem);
       line-height:.98;
       letter-spacing:.01em;
@@ -71,7 +72,7 @@
     .center{text-align:center}
     .section-label{font-size:.7rem;letter-spacing:.27em;text-transform:uppercase;color:var(--sage-deep);font-weight:500;margin-bottom:14px}
     h2{
-      font-family:'Italiana',serif;
+      font-family:'Cormorant Garamond',serif;
       color:var(--sage-deep);
       font-size:clamp(2.5rem,6vw,4.6rem);
       line-height:1.08;
@@ -79,59 +80,116 @@
     }
     .lead{max-width:700px;margin:0 auto;font-family:'Cormorant Garamond',serif;font-size:1.35rem;line-height:1.6;color:#667364}
     .divider{width:78px;height:1px;background:var(--sage);margin:28px auto 0;opacity:.6}
-    .details{background:var(--paper)}
+    .details{
+      background:
+        linear-gradient(180deg,rgba(255,253,247,.96),rgba(247,243,233,.96));
+      position:relative;
+    }
     .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:52px}
     .card{
-      background:var(--sage-pale);
-      border:1px solid var(--line);
-      padding:46px 34px;
+      position:relative;
+      background:linear-gradient(145deg,#f7faf5 0%,#e8eee5 100%);
+      border:1px solid rgba(255,255,255,.85);
+      border-radius:24px;
+      padding:48px 34px;
       min-height:330px;
       display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
+      box-shadow:
+        0 24px 45px rgba(67,83,67,.14),
+        inset 0 1px 0 rgba(255,255,255,.95),
+        inset 0 -10px 24px rgba(93,111,93,.05);
+      transform:translateY(0);
+      transition:transform .25s ease, box-shadow .25s ease;
+      overflow:hidden;
     }
-    .card h3{font-family:'Italiana',serif;color:var(--sage-deep);font-size:2rem;margin:12px 0 10px}
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:24px;
+      background:linear-gradient(120deg,rgba(255,255,255,.5),transparent 36%);
+      pointer-events:none;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:
+        0 30px 58px rgba(67,83,67,.18),
+        inset 0 1px 0 rgba(255,255,255,.95);
+    }
+    .card h3{font-family:'Cormorant Garamond',serif;color:var(--sage-deep);font-size:2.2rem;margin:12px 0 10px;font-weight:500}
     .meta{font-size:.95rem;line-height:1.7;margin-bottom:24px;color:#667364}
     .btn{
       display:inline-block;
-      padding:12px 20px;
-      border:1px solid var(--sage-deep);
+      padding:12px 22px;
+      border:1px solid rgba(77,96,77,.5);
+      border-radius:999px;
+      background:linear-gradient(180deg,#ffffff,#eef3eb);
+      box-shadow:0 7px 16px rgba(74,91,74,.13), inset 0 1px 0 #fff;
       text-decoration:none;
       font-size:.75rem;
       letter-spacing:.12em;
       text-transform:uppercase;
       transition:.2s ease;
     }
-    .btn:hover{background:var(--sage-deep);color:#fff}
-    .story{background:var(--ivory)}
+    .btn:hover{
+      background:var(--sage-deep);
+      color:#fff;
+      transform:translateY(-2px);
+      box-shadow:0 10px 20px rgba(74,91,74,.18);
+    }
+    .story{
+      background:
+        radial-gradient(circle at 82% 18%,rgba(174,187,169,.18),transparent 25%),
+        linear-gradient(180deg,#f6f1e6,#f9f6ee);
+    }
     .story-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:58px;align-items:center}
     .story-image{
       min-height:520px;
+      border-radius:28px;
       background:
-        linear-gradient(rgba(82,100,81,.08),rgba(82,100,81,.08)),
+        linear-gradient(rgba(82,100,81,.03),rgba(82,100,81,.03)),
         url('WhatsApp%20Image%202026-09-26%20at%2014.45.48%20(2).jpeg') center/cover no-repeat;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.72);
     }
     .story-copy{padding:12px 0}
     .story-copy .lead{margin:0;max-width:560px}
-    .travel{background:var(--sage-soft)}
+    .travel{
+      background:
+        linear-gradient(135deg,#dfe7dc 0%,#cfdacb 55%,#e8eee5 100%);
+      box-shadow:inset 0 18px 38px rgba(77,96,77,.06), inset 0 -18px 38px rgba(77,96,77,.05);
+    }
     .travel-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center}
     .travel-photo{
       width:100%;
       height:470px;
       object-fit:cover;
       display:block;
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.7);
     }
     .travel .lead{margin:0;max-width:560px;color:#526451}
-    .rsvp{background:var(--sage-deep);color:#fff}
+    .rsvp{
+      background:
+        radial-gradient(circle at 50% 0%,rgba(255,255,255,.09),transparent 34%),
+        linear-gradient(145deg,#536653,#3f5142);
+      color:#fff;
+      box-shadow:inset 0 18px 32px rgba(255,255,255,.03);
+    }
     .rsvp h2,.rsvp .section-label{color:#fff}
     .rsvp .lead{color:#e9efe5}
     .rsvp-box{
       max-width:720px;
       margin:42px auto 0;
       padding:34px 28px;
-      border:1px solid rgba(255,255,255,.35);
-      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.34);
+      border-radius:24px;
+      background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.045));
+      box-shadow:0 20px 40px rgba(20,34,22,.18), inset 0 1px 0 rgba(255,255,255,.18);
     }
     .rsvp-box p{
       margin:0 0 22px;
@@ -143,8 +201,10 @@
       display:inline-block;
       padding:15px 26px;
       border:1px solid #fff;
-      background:#fff;
+      background:linear-gradient(180deg,#fffdf8,#ecefe8);
       color:var(--sage-deep);
+      border-radius:999px;
+      box-shadow:0 8px 18px rgba(25,40,28,.2), inset 0 1px 0 #fff;
       text-decoration:none;
       font:500 .78rem 'Manrope',sans-serif;
       letter-spacing:.14em;
@@ -166,7 +226,8 @@
       .travel-photo{height:390px}
       .nav-inner{gap:16px}
       nav a{font-size:.68rem}
-      .hero::after{inset:10px}
+      .card{border-radius:20px}
+      .story-image,.travel-photo{border-radius:22px}
     }
   </style>
 </head>
