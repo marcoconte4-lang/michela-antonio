@@ -13,10 +13,10 @@
       --wine:#6f8668;
       --wine-dark:#40533f;
       --wine-soft:#91a789;
-      --rose:#e7dfd0;
-      --rose-light:#f2eee5;
-      --cream:#ece6d9;
-      --paper:#f8f5ee;
+      --rose:#e7e1d7;
+      --rose-light:#f0ece4;
+      --cream:#ebe6de;
+      --paper:#f3efe8;
       --ink:#314033;
       --muted:#647064;
       --orange:#b7c8ad;
@@ -28,7 +28,7 @@
       margin:0;
       font-family:'Manrope',sans-serif;
       color:var(--ink);
-      background:#dce5d7;
+      background:#f0ece4;
     }
     img{display:block;max-width:100%}
     a{color:inherit}
@@ -57,7 +57,7 @@
       position:sticky;
       top:0;
       z-index:50;
-      background:rgba(236,230,217,.96);
+      background:rgba(240,236,228,.96);
       backdrop-filter:blur(14px);
       border-bottom:1px solid rgba(111,48,72,.10);
     }
@@ -93,9 +93,7 @@
       min-height:calc(100vh - 74px);
       display:flex;
       align-items:center;
-      background:
-        radial-gradient(circle at 88% 18%,rgba(64,83,63,.14),transparent 34%),
-        linear-gradient(120deg,#d7e2d2 0%,#e8eee4 48%,#e7dfd0 100%);
+      background:#f0ece4;
       padding:68px 0 72px;
     }
     .hero-grid{
@@ -131,7 +129,7 @@
       min-height:64px;
     }
     .meta-block + .meta-block{
-      border-left:1px solid #d9cdbb;
+      border-left:1px solid #7f9277;
       padding-left:22px;
     }
     .meta-value{
@@ -143,6 +141,13 @@
     .meta-label{
       color:var(--wine);
       font-size:.78rem;
+    }
+    .time-big{
+      display:block;
+      font-size:1.32rem;
+      font-weight:700;
+      color:var(--wine-dark);
+      margin-top:2px;
     }
     .hero-photo-wrap{
       position:relative;
@@ -169,7 +174,7 @@
       letter-spacing:-.035em;
       margin:18px 0 18px;
     }
-    .program{background:#dfe8da}
+    .program{background:#f0ece4}
     .program-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -210,7 +215,7 @@
 
     /* GIFT */
     .gift{
-      background:#cfdcc9;
+      background:#f0ece4;
     }
     .gift-grid{
       display:grid;
@@ -224,7 +229,7 @@
       margin:18px 0 26px;
     }
     .gift-box{
-      background:#dbe5d6;
+      background:#d5e0d0;
       border-left:6px solid var(--wine-soft);
       padding:46px 48px;
       min-height:260px;
@@ -270,7 +275,7 @@
 
     /* RSVP */
     .rsvp{
-      background:linear-gradient(135deg,#e3eadf 0%,#d4dfcf 58%,#e7dfd0 100%);
+      background:#f0ece4;
     }
     .rsvp-grid{
       display:grid;
@@ -342,7 +347,7 @@
 <body>
   <nav>
     <div class="wrap nav-inner">
-      <a class="brand" href="#home">Ci sposiamo</a>
+      <a class="brand" href="#home">Ci sposiamo!</a>
       <div class="nav-links"></div>
     </div>
   </nav>
@@ -354,7 +359,7 @@
         <div class="hero-meta">
           <div class="meta-block">
             <span class="meta-value">22 maggio 2027</span>
-            <span class="meta-label">14:30</span>
+            <span class="meta-label time-big">14:30</span>
           </div>
           <div class="meta-block">
             <span class="meta-value"><a class="venue-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+San+Giulio+Cassano+Magnago">Chiesa di San Giulio</a></span>
@@ -387,7 +392,7 @@
           <h3>RICEVIMENTO</h3>
           <p><a class="venue-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Villa+Valentina+Via+Gaetano+Donizetti+17+Tradate"><strong>Villa Valentina</strong></a></p>
           <p>Tradate (VA)</p>
-          <p>Dopo la cerimonia</p>
+          <p>Al termine della cerimonia</p>
         </article>
       </div>
     </div>
@@ -401,7 +406,6 @@
 
       <div class="rsvp-box">
         <h3>Conferma presenza</h3>
-        <p>Il modulo raccoglierà nome, presenza, numero di partecipanti, eventuali bambini, allergie o intolleranze e una nota facoltativa.</p>
         <a class="cta" id="rsvpButton" href="#" target="_blank" rel="noopener">Compila il modulo</a>
         <div class="rsvp-note">Il Google Form verrà collegato qui appena sarà pronto.</div>
       </div>
@@ -415,7 +419,7 @@
 
       </div>
       <div class="gift-box">
-        <h3>Regalo per il viaggio di nozze</h3>
+        <h3>Il regalo più grande sarà la vostra presenza. Se vorrete contribuire alla nostra vita insieme, troverete qui tutte le informazioni.</h3>
       </div>
     </div>
   </section>
