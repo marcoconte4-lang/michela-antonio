@@ -10,17 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --wine:#6f3048;
-      --wine-dark:#4b2535;
-      --wine-soft:#a45c75;
-      --rose:#ead9dc;
-      --rose-light:#f5eeee;
-      --cream:#f4eee7;
-      --paper:#fbf8f4;
-      --ink:#352a2e;
-      --muted:#6e6065;
-      --orange:#d98c68;
-      --line:#d8bec6;
+      --wine:#6f8668;
+      --wine-dark:#40533f;
+      --wine-soft:#91a789;
+      --rose:#dfe7da;
+      --rose-light:#eef3eb;
+      --cream:#f2f0e7;
+      --paper:#f8f7f1;
+      --ink:#314033;
+      --muted:#647064;
+      --orange:#b7c8ad;
+      --line:#c5d2c0;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -94,8 +94,8 @@
       display:flex;
       align-items:center;
       background:
-        radial-gradient(circle at 87% 18%,rgba(217,140,104,.28),transparent 32%),
-        linear-gradient(120deg,#f4e9ea 0%,#f6efeb 52%,#efd9d0 100%);
+        radial-gradient(circle at 87% 18%,rgba(145,167,137,.24),transparent 32%),
+        linear-gradient(120deg,#edf3ea 0%,#f4f3eb 52%,#dfe8da 100%);
       padding:68px 0 72px;
     }
     .hero-grid{
@@ -146,15 +146,15 @@
     }
     .hero-photo-wrap{
       position:relative;
-      padding:22px;
-      background:linear-gradient(145deg,rgba(111,48,72,.12),rgba(217,140,104,.12));
+      padding:0;
+      background:none;
     }
     .hero-photo{
       width:100%;
       max-height:690px;
       object-fit:contain;
       object-position:center;
-      background:#dbc9cb;
+      background:transparent;
     }
     .trackline{
       position:absolute;
@@ -230,6 +230,7 @@
       color:var(--wine);
       font-size:.77rem;
       font-weight:600;
+      text-decoration:none;
     }
 
     /* TRAVEL */
@@ -263,7 +264,7 @@
       min-height:460px;
       background:
         linear-gradient(rgba(60,35,45,.08),rgba(60,35,45,.08)),
-        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500&q=86') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1500&q=86') center/cover no-repeat;
     }
     .caption{
       margin-top:12px;
@@ -428,7 +429,6 @@
         <a href="#giornata">La giornata</a>
         <a href="#viaggio">Il viaggio</a>
         <a href="#regalo">Il regalo</a>
-        <a href="#arrivare">Come arrivare</a>
         <a href="#rsvp">Conferma presenza</a>
       </div>
     </div>
@@ -447,7 +447,7 @@
             <span class="meta-label">Sabato</span>
           </div>
           <div class="meta-block">
-            <span class="meta-value">Ore 15:30</span>
+            <span class="meta-value">Ore 14:30</span>
             <span class="meta-label">La cerimonia</span>
           </div>
           <div class="meta-block">
@@ -478,8 +478,8 @@
           <h3>Il nostro sì</h3>
           <strong>Chiesa di San Giulio</strong>
           <p>Cassano Magnago (VA)</p>
-          <p>Ore 15:30</p>
-          <span class="mini-tag">Cassano Magnago</span>
+          <p>Ore 14:30</p>
+          <a class="mini-tag" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+San+Giulio+Cassano+Magnago">Apri in Google Maps ↗</a>
         </article>
 
         <article class="program-card">
@@ -488,7 +488,7 @@
           <strong>Villa Valentina</strong>
           <p>Tradate (VA)</p>
           <p>Ricevimento dopo la cerimonia</p>
-          <span class="mini-tag">Dopo il sì</span>
+          <a class="mini-tag" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Villa+Valentina+Via+Gaetano+Donizetti+17+Tradate">Apri in Google Maps ↗</a>
         </article>
       </div>
     </div>
@@ -499,13 +499,13 @@
       <div class="travel-copy">
         <div class="eyebrow">La prossima traccia</div>
         <h2>In viaggio<br>per l'Europa</h2>
-        <p class="lead">Il nostro viaggio di nozze sarà un road trip in Europa.</p>
-        <p class="lead">Se volete contribuire alle spese del viaggio, ci aiuterete a riempire questa nuova avventura di ricordi.</p>
+        <p class="lead">Un road trip tra città, montagne e strade d'Europa.</p>
+        <p class="lead">Se volete contribuire al viaggio, qui trovate tutte le informazioni.</p>
         <a class="cta" href="#regalo">Un pensiero per il viaggio</a>
       </div>
       <div>
         <div class="travel-image" role="img" aria-label="Strada panoramica tra le montagne europee"></div>
-        <div class="caption">La nostra prossima avventura, un chilometro alla volta.</div>
+        <div class="caption">La nostra prossima avventura, strada dopo strada.</div>
       </div>
     </div>
   </section>
@@ -515,40 +515,12 @@
       <div>
         <div class="eyebrow">Un pensiero per noi</div>
         <h2>Il regalo<br>più bello</h2>
-        <p class="lead">Il regalo più bello sarà avervi con noi. Se desiderate contribuire al nostro viaggio di nozze, troverete qui le informazioni.</p>
+        <p class="lead">Se desiderate contribuire al nostro viaggio di nozze, qui troverete le informazioni.</p>
       </div>
       <div class="gift-box">
         <h3>Regalo per il viaggio di nozze</h3>
         <p class="placeholder">IBAN e intestatario saranno aggiunti dagli sposi.</p>
         <p>Questa sezione è ancora in preparazione.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="directions" id="arrivare">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Ci vediamo qui</div>
-        <h2>Come arrivare</h2>
-        <p class="lead">Le indicazioni per raggiungere la cerimonia e il ricevimento.</p>
-      </div>
-
-      <div class="direction-grid">
-        <article class="direction-card">
-          <h3>La cerimonia</h3>
-          <p><strong>Chiesa di San Giulio</strong></p>
-          <p>Cassano Magnago (VA)</p>
-          <p>Ore 15:30</p>
-          <a class="cta" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+San+Giulio+Cassano+Magnago">Indicazioni per la chiesa ↗</a>
-        </article>
-
-        <article class="direction-card">
-          <h3>La festa</h3>
-          <p><strong>Villa Valentina</strong></p>
-          <p>Via Gaetano Donizetti 17, Tradate (VA)</p>
-          <p>Ricevimento dopo la cerimonia.</p>
-          <a class="cta" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Villa+Valentina+Via+Gaetano+Donizetti+17+Tradate">Indicazioni per Villa Valentina ↗</a>
-        </article>
       </div>
     </div>
   </section>
