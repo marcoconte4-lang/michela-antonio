@@ -341,6 +341,44 @@
       color:var(--muted);
       line-height:1.75;
     }
+    .rsvp-form{
+      display:grid;
+      gap:18px;
+      margin-top:26px;
+    }
+    .rsvp-form label{
+      display:grid;
+      gap:8px;
+      font-size:.88rem;
+      font-weight:700;
+      color:var(--wine-dark);
+    }
+    .rsvp-form input,
+    .rsvp-form select,
+    .rsvp-form textarea{
+      width:100%;
+      border:1px solid rgba(64,83,63,.24);
+      background:#eef3eb;
+      color:var(--ink);
+      font:500 .95rem 'Manrope',sans-serif;
+      padding:13px 14px;
+      border-radius:0;
+      outline:none;
+    }
+    .rsvp-form input:focus,
+    .rsvp-form select:focus,
+    .rsvp-form textarea:focus{
+      border-color:var(--wine);
+    }
+    .form-submit{
+      width:max-content;
+      border:0;
+      background:var(--wine);
+      color:#fff;
+      font:700 .88rem 'Manrope',sans-serif;
+      padding:13px 19px;
+      cursor:pointer;
+    }
     .rsvp-note{
       margin-top:14px;
       font-size:.8rem;
@@ -349,20 +387,14 @@
 
     /* FOOTER */
     footer{
-      position:relative;
       background:#dce5d7;
       color:var(--wine-dark);
-      padding:54px 0 92px;
+      padding:0;
       text-align:center;
     }
-    footer::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      height:42px;
+    .footer-band{
       background:#8fa283;
+      padding:28px 0;
     }
     footer .footer-name{
       font-family:'DM Serif Display',serif;
@@ -432,6 +464,7 @@
         <article class="program-card">
           <h3>CERIMONIA</h3>
           <p><a class="venue-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+San+Giulio+Cassano+Magnago"><strong>Chiesa di San Giulio</strong></a></p>
+          <p>Piazza S. Giulio, 21012</p>
           <p>Cassano Magnago (VA)</p>
           <p>Ore 14:30</p>
           <p class="parking"><a class="venue-link" target="_blank" rel="noopener" href="https://google.it/maps/place/Piazzetta+Don+Filippo+Spina,+21012+Cassano+Magnago+VA/@45.6745651,8.8289525,709m/data=!3m1!1e3!4m6!3m5!1s0x478689ab7544237f:0x86bc73a06a038977!8m2!3d45.674735!4d8.8270889!16s%2Fg%2F119tjyy25?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D">Parcheggio</a></p>
@@ -440,6 +473,7 @@
         <article class="program-card">
           <h3>RICEVIMENTO</h3>
           <p><a class="venue-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Villa+Valentina+Via+Gaetano+Donizetti+17+Tradate"><strong>Villa Valentina</strong></a></p>
+          <p>Via Gaetano Donizetti, 17, 21049</p>
           <p>Tradate (VA)</p>
           <p>Al termine della cerimonia</p>
         </article>
@@ -455,8 +489,32 @@
 
       <div class="rsvp-box">
         <h3>Conferma la tua presenza</h3>
-        <a class="cta" id="rsvpButton" href="#" target="_blank" rel="noopener">Compila il modulo</a>
-        <div class="rsvp-note">Il Google Form verrà collegato qui appena sarà pronto.</div>
+        <form class="rsvp-form" onsubmit="event.preventDefault(); alert('Questa è solo una prova grafica del modulo.');">
+          <label>
+            Nome e cognome
+            <input type="text" placeholder="Nome e cognome">
+          </label>
+
+          <label>
+            Ci sarai?
+            <select>
+              <option>Sì, ci sarò</option>
+              <option>No, non potrò esserci</option>
+            </select>
+          </label>
+
+          <label>
+            Numero di partecipanti
+            <input type="number" min="1" max="10" value="1">
+          </label>
+
+          <label>
+            Allergie, intolleranze o note
+            <textarea rows="3" placeholder="Scrivi qui"></textarea>
+          </label>
+
+          <button class="form-submit" type="submit">Invia conferma</button>
+        </form>
       </div>
     </div>
   </section>
@@ -475,22 +533,13 @@
   </section>
 
   <footer>
-    <div class="wrap">
-      <div class="footer-name">Michi & Tony</div>
+    <div class="footer-band">
+      <div class="wrap">
+        <div class="footer-name">Michi & Tony</div>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const GOOGLE_FORM_URL = "";
-    const rsvpButton = document.getElementById("rsvpButton");
-    if (GOOGLE_FORM_URL) {
-      rsvpButton.href = GOOGLE_FORM_URL;
-    } else {
-      rsvpButton.addEventListener("click", function(e){
-        e.preventDefault();
-        alert("Il modulo RSVP sarà disponibile a breve.");
-      });
-    }
-  </script>
+
 </body>
 </html>
