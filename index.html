@@ -349,10 +349,20 @@
 
     /* FOOTER */
     footer{
+      position:relative;
       background:#dce5d7;
       color:var(--wine-dark);
-      padding:54px 0 58px;
+      padding:54px 0 86px;
       text-align:center;
+    }
+    footer::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:28px;
+      background:#6f8668;
     }
     footer .footer-name{
       font-family:'DM Serif Display',serif;
