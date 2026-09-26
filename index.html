@@ -327,9 +327,11 @@
       margin:18px 0 26px;
     }
     .rsvp-box{
-      background:var(--paper);
+      background:#c8d6c2;
       border:1px solid var(--line);
-      padding:46px;
+      border-left:6px solid var(--wine);
+      padding:42px;
+      min-height:260px;
     }
     .rsvp-box h3{
       font-family:'Manrope',sans-serif;
@@ -341,48 +343,10 @@
       color:var(--muted);
       line-height:1.75;
     }
-    .rsvp-form{
-      display:grid;
-      gap:18px;
-      margin-top:26px;
-    }
-    .rsvp-form label{
-      display:grid;
-      gap:8px;
-      font-size:.88rem;
-      font-weight:700;
-      color:var(--wine-dark);
-    }
-    .rsvp-form input,
-    .rsvp-form select,
-    .rsvp-form textarea{
-      width:100%;
-      border:1px solid rgba(64,83,63,.24);
-      background:#eef3eb;
-      color:var(--ink);
-      font:500 .95rem 'Manrope',sans-serif;
-      padding:13px 14px;
-      border-radius:0;
-      outline:none;
-    }
-    .rsvp-form input:focus,
-    .rsvp-form select:focus,
-    .rsvp-form textarea:focus{
-      border-color:var(--wine);
-    }
-    .form-submit{
-      width:max-content;
-      border:0;
-      background:var(--wine);
-      color:#fff;
-      font:700 .88rem 'Manrope',sans-serif;
-      padding:13px 19px;
-      cursor:pointer;
-    }
-    .rsvp-note{
-      margin-top:14px;
-      font-size:.8rem;
-      color:#8a767e;
+    .rsvp-placeholder{
+      margin-top:18px;
+      color:var(--muted);
+      line-height:1.7;
     }
 
     /* FOOTER */
@@ -489,32 +453,7 @@
 
       <div class="rsvp-box">
         <h3>Conferma la tua presenza</h3>
-        <form class="rsvp-form" onsubmit="event.preventDefault(); alert('Questa è solo una prova grafica del modulo.');">
-          <label>
-            Nome e cognome
-            <input type="text" placeholder="Nome e cognome">
-          </label>
-
-          <label>
-            Ci sarai?
-            <select>
-              <option>Sì, ci sarò</option>
-              <option>No, non potrò esserci</option>
-            </select>
-          </label>
-
-          <label>
-            Numero di partecipanti
-            <input type="number" min="1" max="10" value="1">
-          </label>
-
-          <label>
-            Allergie, intolleranze o note
-            <textarea rows="3" placeholder="Scrivi qui"></textarea>
-          </label>
-
-          <button class="form-submit" type="submit">Invia conferma</button>
-        </form>
+        <p class="rsvp-placeholder">Qui inseriremo il Google Form per la conferma della presenza.</p>
       </div>
     </div>
   </section>
