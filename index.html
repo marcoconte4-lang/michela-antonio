@@ -7,7 +7,7 @@
   <meta name="description" content="Il matrimonio di Michela e Antonio · 22 maggio 2027">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Italiana&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{
       --sage:#7f9277;
@@ -37,7 +37,8 @@
       padding:42px 22px;
       background:
         linear-gradient(180deg,rgba(54,69,54,.18),rgba(54,69,54,.38)),
-        url('WhatsApp%20Image%202026-09-26%20at%2014.45.48%20(1).jpeg') center 48%/cover no-repeat;
+        url('hero-original.jpeg') center center/contain no-repeat,
+        linear-gradient(180deg,#809474,#6f8468);
       color:#fff;
     }
     .hero::after{display:none}
@@ -45,14 +46,14 @@
     .kicker{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500}
     h1,h2,h3{margin:0;font-weight:400}
     h1{
-      font-family:'Manrope',sans-serif;
-      font-weight:500;
-      font-size:clamp(3.3rem,9vw,7rem);
-      line-height:.98;
-      letter-spacing:-.03em;
+      font-family:'Bodoni Moda',serif;
+      font-weight:600;
+      font-size:clamp(3.4rem,9vw,7.2rem);
+      line-height:.95;
+      letter-spacing:-.045em;
       margin:22px 0 18px;
     }
-    .amp{font-family:'Manrope',sans-serif;font-style:normal;font-weight:300;font-size:.72em}
+    .amp{font-family:'Bodoni Moda',serif;font-style:normal;font-weight:500;font-size:.7em}
     .date{
       font-family:'Manrope',sans-serif;
       font-size:clamp(1rem,2.4vw,1.35rem);
@@ -87,9 +88,7 @@
       background:linear-gradient(180deg,#b7c7ad,#d2ddcc);
       position:relative;
     }
-    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:34px;margin-top:52px}
-    .cards .card:nth-child(2){transform:translateY(26px)}
-    .cards .card:nth-child(2):hover{transform:translateY(20px)}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:52px}
     .story-copy{position:relative}
     .story-copy::before{
       content:"";
@@ -100,8 +99,8 @@
     }
     .card{
       position:relative;
-      background:linear-gradient(145deg,#9fb294 0%,#b9c8b0 100%);
-      border:none;
+      background:linear-gradient(180deg,#a7b99d 0%,#9fb293 100%);
+      border:1px solid rgba(64,83,67,.22);
       border-radius:0;
       padding:48px 34px;
       min-height:330px;
@@ -109,19 +108,15 @@
       flex-direction:column;
       justify-content:center;
       align-items:center;
-      box-shadow:
-        14px 14px 0 rgba(64,83,67,.13),
-        0 20px 40px rgba(64,83,67,.12);
-      transform:translateY(0);
-      transition:transform .25s ease, box-shadow .25s ease;
+      box-shadow:none;
+      transform:none;
+      transition:background .2s ease,border-color .2s ease;
       overflow:hidden;
     }
     .card::before{display:none}
     .card:hover{
-      transform:translateY(-6px);
-      box-shadow:
-        18px 18px 0 rgba(64,83,67,.16),
-        0 28px 50px rgba(64,83,67,.14);
+      background:linear-gradient(180deg,#afc0a5 0%,#a4b89a 100%);
+      border-color:rgba(64,83,67,.35);
     }
     .card h3{font-family:'Manrope',sans-serif;color:var(--sage-deep);font-size:1.9rem;margin:12px 0 10px;font-weight:600;letter-spacing:-.02em}
     .meta{font-size:.95rem;line-height:1.7;margin-bottom:24px;color:#667364}
@@ -221,12 +216,11 @@
     footer{background:#3f503f;color:#edf2ea;text-align:center;padding:34px 20px;font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.05em}
     @media(max-width:780px){
       section{padding:72px 18px}
-      .cards,.story-grid,.travel-grid{grid-template-columns:1fr}
-      .story-image{min-height:430px}
+      .cards,.travel-grid{grid-template-columns:1fr}
       .travel-photo{height:390px}
       .nav-inner{gap:16px}
       nav a{font-size:.68rem}
-      .card,.story-image,.travel-photo{border-radius:0}
+      .card,.travel-photo{border-radius:0}
     }
   </style>
 </head>
@@ -243,7 +237,6 @@
   <nav>
     <div class="nav-inner">
       <a href="#giornata">La giornata</a>
-      <a href="#noi">Noi</a>
       <a href="#viaggio">Viaggio</a>
       <a href="#rsvp">RSVP</a>
     </div>
@@ -269,17 +262,6 @@
           <div class="meta">Via Gaetano Donizetti 17<br>Tradate (VA)</div>
           <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Villa+Valentina+Via+Gaetano+Donizetti+17+Tradate">Indicazioni</a>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="story" id="noi">
-    <div class="wrap story-grid">
-      <div class="story-image" aria-label="Foto di Michela e Antonio"></div>
-      <div class="story-copy">
-        <div class="section-label">Michela & Antonio</div>
-        <h2>Una nuova tappa, insieme</h2>
-        <p class="lead">Dopo tanti momenti, viaggi e risate condivise, siamo pronti per il nostro prossimo capitolo. E vogliamo viverlo circondati dalle persone che fanno parte della nostra storia.</p>
       </div>
     </div>
   </section>
