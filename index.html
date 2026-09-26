@@ -57,7 +57,7 @@
       position:sticky;
       top:0;
       z-index:50;
-      background:rgba(251,248,244,.94);
+      background:rgba(236,230,217,.96);
       backdrop-filter:blur(14px);
       border-bottom:1px solid rgba(111,48,72,.10);
     }
@@ -121,7 +121,7 @@
     }
     .hero-meta{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:1fr 1.15fr;
       gap:0;
       margin-top:46px;
       max-width:690px;
@@ -131,7 +131,7 @@
       min-height:64px;
     }
     .meta-block + .meta-block{
-      border-left:1px solid rgba(111,48,72,.28);
+      border-left:1px solid #d9cdbb;
       padding-left:22px;
     }
     .meta-value{
@@ -177,7 +177,7 @@
     }
     .program-card{
       padding:42px;
-      background:#f0ece2;
+      background:#c8d6c2;
       border:1px solid var(--line);
       min-height:350px;
       display:flex;
@@ -203,10 +203,10 @@
     }
     .venue-link{
       color:var(--wine-dark);
-      text-decoration:none;
-      border-bottom:1px solid rgba(64,83,63,.35);
+      text-decoration:underline;
+      text-underline-offset:4px;
+      text-decoration-thickness:1px;
     }
-    .venue-link:hover{border-bottom-color:var(--wine-dark)}
 
     /* GIFT */
     .gift{
@@ -224,7 +224,7 @@
       margin:18px 0 26px;
     }
     .gift-box{
-      background:var(--paper);
+      background:#dbe5d6;
       border-left:6px solid var(--wine-soft);
       padding:46px 48px;
       min-height:260px;
@@ -253,7 +253,7 @@
       margin-top:46px;
     }
     .direction-card{
-      background:var(--paper);
+      background:#d1decB;
       border:1px solid var(--line);
       padding:40px;
     }
@@ -306,8 +306,8 @@
 
     /* FOOTER */
     footer{
-      background:#40533f;
-      color:#f7ebee;
+      background:#7f9277;
+      color:#f3f0e6;
       padding:54px 0 58px;
       text-align:center;
     }
@@ -315,24 +315,6 @@
       font-family:'DM Serif Display',serif;
       font-size:2rem;
       margin-bottom:10px;
-    }
-    footer p{color:#d7bdc6}
-    .footer-track{
-      width:220px;
-      height:2px;
-      background:#b67a8f;
-      margin:24px auto 0;
-      position:relative;
-    }
-    .footer-track::after{
-      content:"";
-      position:absolute;
-      width:12px;height:12px;
-      border-radius:50%;
-      background:#f7ebee;
-      left:58%;
-      top:50%;
-      transform:translate(-50%,-50%);
     }
 
     @media(max-width:900px){
@@ -360,12 +342,8 @@
 <body>
   <nav>
     <div class="wrap nav-inner">
-      <a class="brand" href="#home">Michela & Antonio</a>
-      <div class="nav-links">
-        <a href="#giornata">La giornata</a>
-        <a href="#rsvp">Conferma presenza</a>
-        <a href="#regalo">Il regalo</a>
-      </div>
+      <a class="brand" href="#home">Ci sposiamo</a>
+      <div class="nav-links"></div>
     </div>
   </nav>
 
@@ -376,15 +354,11 @@
         <div class="hero-meta">
           <div class="meta-block">
             <span class="meta-value">22 maggio 2027</span>
-            <span class="meta-label">Sabato</span>
+            <span class="meta-label">14:30</span>
           </div>
           <div class="meta-block">
-            <span class="meta-value">Ore 14:30</span>
-            <span class="meta-label">La cerimonia</span>
-          </div>
-          <div class="meta-block">
-            <span class="meta-value">Cassano Magnago</span>
-            <span class="meta-label">Chiesa di San Giulio</span>
+            <span class="meta-value"><a class="venue-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+San+Giulio+Cassano+Magnago">Chiesa di San Giulio</a></span>
+            <span class="meta-label">Cassano Magnago</span>
           </div>
         </div>
       </div>
@@ -422,9 +396,7 @@
   <section class="rsvp" id="rsvp">
     <div class="wrap rsvp-grid">
       <div>
-        <div class="eyebrow">Un posto per voi</div>
         <h2>Ci sarai?</h2>
-        <p class="lead">Confermate la vostra presenza e indicate quante persone sarete. Nel modulo potrete anche segnalarci eventuali allergie o intolleranze.</p>
       </div>
 
       <div class="rsvp-box">
@@ -440,12 +412,10 @@
     <div class="wrap gift-grid">
       <div>
         <h2>Il regalo più bello</h2>
-        <p class="lead">Se desiderate contribuire al nostro viaggio di nozze, qui troverete le informazioni.</p>
+
       </div>
       <div class="gift-box">
         <h3>Regalo per il viaggio di nozze</h3>
-        <p class="placeholder">IBAN e intestatario saranno aggiunti dagli sposi.</p>
-        <p>Questa sezione è ancora in preparazione.</p>
       </div>
     </div>
   </section>
@@ -453,8 +423,6 @@
   <footer>
     <div class="wrap">
       <div class="footer-name">Michela & Antonio</div>
-      <p>Ci vediamo presto sulla pista da ballo.</p>
-      <div class="footer-track" aria-hidden="true"></div>
     </div>
   </footer>
 
