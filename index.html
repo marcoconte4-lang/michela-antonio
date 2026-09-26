@@ -7,260 +7,488 @@
   <meta name="description" content="Il matrimonio di Michela e Antonio · 22 maggio 2027">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --sage:#7f9277;
-      --sage-deep:#405343;
-      --sage-mid:#9eae95;
-      --sage-soft:#cfdac8;
-      --sage-pale:#dfe8da;
-      --sage-bright:#b8c7ae;
-      --ivory:#ece8dd;
-      --paper:#d6e0d0;
-      --text:#334236;
-      --line:rgba(64,83,67,.16);
-      --shadow:0 22px 50px rgba(49,67,53,.15);
-      --shadow-soft:0 10px 24px rgba(49,67,53,.10);
+      --wine:#6f3048;
+      --wine-dark:#4b2535;
+      --wine-soft:#a45c75;
+      --rose:#ead9dc;
+      --rose-light:#f5eeee;
+      --cream:#f4eee7;
+      --paper:#fbf8f4;
+      --ink:#352a2e;
+      --muted:#6e6065;
+      --orange:#d98c68;
+      --line:#d8bec6;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:
-      linear-gradient(180deg,#b9c8af 0%,#d4dfce 34%,#a9ba9f 68%,#c8d5c1 100%);
-      color:var(--text);font-family:'Manrope',sans-serif;font-weight:400}
+    body{
+      margin:0;
+      font-family:'Manrope',sans-serif;
+      color:var(--ink);
+      background:var(--rose-light);
+    }
+    img{display:block;max-width:100%}
     a{color:inherit}
-    .hero{
-      min-height:100svh;
-      position:relative;
-      display:grid;
-      place-items:center;
-      padding:42px 22px;
-      background:
-        linear-gradient(180deg,rgba(54,69,54,.18),rgba(54,69,54,.38)),
-        url('hero-original.jpeg') center center/contain no-repeat,
-        linear-gradient(180deg,#809474,#6f8468);
-      color:#fff;
-    }
-    .hero::after{display:none}
-    .hero-content{position:relative;z-index:1;text-align:center;max-width:900px;text-shadow:0 2px 22px rgba(0,0,0,.22)}
-    .kicker{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500}
-    h1,h2,h3{margin:0;font-weight:400}
-    h1{
-      font-family:'Bodoni Moda',serif;
-      font-weight:600;
-      font-size:clamp(3.4rem,9vw,7.2rem);
-      line-height:.95;
-      letter-spacing:-.045em;
-      margin:22px 0 18px;
-    }
-    .amp{font-family:'Bodoni Moda',serif;font-style:normal;font-weight:500;font-size:.7em}
-    .date{
-      font-family:'Manrope',sans-serif;
-      font-size:clamp(1rem,2.4vw,1.35rem);
-      letter-spacing:.18em;
+    .wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .eyebrow{
+      font-size:.76rem;
+      font-weight:700;
       text-transform:uppercase;
+      letter-spacing:.24em;
+      color:var(--wine);
     }
-    .scroll{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;opacity:.9;z-index:2}
+    h1,h2,h3{
+      font-family:'DM Serif Display',serif;
+      font-weight:400;
+      margin:0;
+    }
+    p{margin:0}
+    .lead{
+      color:var(--muted);
+      line-height:1.75;
+      font-size:1.05rem;
+    }
+
+    /* NAV */
     nav{
-      position:sticky;top:0;z-index:30;
-      background:rgba(188,203,179,.93);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(251,248,244,.94);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(111,48,72,.10);
     }
-    .nav-inner{max-width:1100px;margin:auto;display:flex;justify-content:center;gap:32px;padding:15px 18px;flex-wrap:wrap}
-    nav a{text-decoration:none;font-size:.77rem;letter-spacing:.13em;text-transform:uppercase;font-weight:500}
-    section{padding:94px 22px}
-    .wrap{max-width:1100px;margin:auto}
-    .center{text-align:center}
-    .section-label{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sage-deep);font-weight:600;margin-bottom:14px}
-    h2{
-      font-family:'Manrope',sans-serif;
-      font-weight:500;
-      color:var(--sage-deep);
-      font-size:clamp(2.2rem,5vw,4rem);
-      letter-spacing:-.03em;
-      line-height:1.08;
-      margin-bottom:20px;
+    .nav-inner{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
     }
-    .lead{max-width:700px;margin:0 auto;font-family:'Manrope',sans-serif;font-size:1.08rem;line-height:1.75;color:#526354}
-    .divider{width:78px;height:1px;background:var(--sage);margin:28px auto 0;opacity:.6}
-    .details{
-      background:linear-gradient(180deg,#b7c7ad,#d2ddcc);
+    .brand{
+      text-decoration:none;
+      font-family:'DM Serif Display',serif;
+      font-size:1.35rem;
+      color:var(--wine-dark);
+    }
+    .nav-links{
+      display:flex;
+      gap:26px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      text-decoration:none;
+      font-size:.86rem;
+      font-weight:600;
+      color:var(--wine-dark);
+    }
+
+    /* HERO */
+    .hero{
+      min-height:calc(100vh - 74px);
+      display:flex;
+      align-items:center;
+      background:
+        radial-gradient(circle at 87% 18%,rgba(217,140,104,.28),transparent 32%),
+        linear-gradient(120deg,#f4e9ea 0%,#f6efeb 52%,#efd9d0 100%);
+      padding:68px 0 72px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.03fr .97fr;
+      gap:74px;
+      align-items:center;
+    }
+    .hero-copy{padding:20px 0}
+    .hero h1{
+      font-size:clamp(4.6rem,8vw,7.8rem);
+      line-height:.88;
+      letter-spacing:-.045em;
+      color:var(--ink);
+      margin:28px 0 26px;
+    }
+    .hero h1 .amp{color:var(--wine-soft);font-style:italic}
+    .hero-intro{
+      max-width:610px;
+      font-size:1.1rem;
+      line-height:1.7;
+      color:#66575d;
+    }
+    .hero-meta{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:0;
+      margin-top:46px;
+      max-width:690px;
+    }
+    .meta-block{
+      padding:4px 22px 4px 0;
+      min-height:64px;
+    }
+    .meta-block + .meta-block{
+      border-left:1px solid rgba(111,48,72,.28);
+      padding-left:22px;
+    }
+    .meta-value{
+      display:block;
+      font-weight:700;
+      margin-bottom:6px;
+      font-size:1rem;
+    }
+    .meta-label{
+      color:var(--wine);
+      font-size:.78rem;
+    }
+    .hero-photo-wrap{
       position:relative;
+      padding:22px;
+      background:linear-gradient(145deg,rgba(111,48,72,.12),rgba(217,140,104,.12));
     }
-    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:52px}
-    .story-copy{position:relative}
-    .story-copy::before{
+    .hero-photo{
+      width:100%;
+      max-height:690px;
+      object-fit:contain;
+      object-position:center;
+      background:#dbc9cb;
+    }
+    .trackline{
+      position:absolute;
+      left:-36px;
+      bottom:42px;
+      width:140px;
+      height:3px;
+      background:var(--wine);
+    }
+    .trackline::after{
       content:"";
       position:absolute;
-      width:72px;height:8px;
-      background:#829678;
-      top:-24px;left:0;
+      right:24px;
+      top:50%;
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      background:var(--paper);
+      border:3px solid var(--wine);
+      transform:translateY(-50%);
     }
-    .card{
-      position:relative;
-      background:linear-gradient(180deg,#a7b99d 0%,#9fb293 100%);
-      border:1px solid rgba(64,83,67,.22);
-      border-radius:0;
-      padding:48px 34px;
-      min-height:330px;
+
+    /* SECTIONS */
+    section{padding:108px 0}
+    .section-head{
+      max-width:820px;
+      margin-bottom:52px;
+    }
+    .section-head h2{
+      font-size:clamp(3.5rem,6vw,6rem);
+      line-height:.98;
+      letter-spacing:-.035em;
+      margin:18px 0 18px;
+    }
+    .program{background:var(--paper)}
+    .program-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+    }
+    .program-card{
+      padding:42px;
+      background:#f8f2ef;
+      border:1px solid var(--line);
+      min-height:350px;
       display:flex;
       flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      box-shadow:none;
-      transform:none;
-      transition:background .2s ease,border-color .2s ease;
-      overflow:hidden;
+      justify-content:flex-start;
     }
-    .card::before{display:none}
-    .card:hover{
-      background:linear-gradient(180deg,#afc0a5 0%,#a4b89a 100%);
-      border-color:rgba(64,83,67,.35);
+    .program-card .number{
+      color:var(--wine);
+      letter-spacing:.16em;
+      font-weight:700;
+      font-size:.78rem;
+      margin-bottom:42px;
     }
-    .card h3{font-family:'Manrope',sans-serif;color:var(--sage-deep);font-size:1.9rem;margin:12px 0 10px;font-weight:600;letter-spacing:-.02em}
-    .meta{font-size:.95rem;line-height:1.7;margin-bottom:24px;color:#667364}
-    .btn{
+    .program-card h3{
+      font-size:2.6rem;
+      margin-bottom:12px;
+    }
+    .program-card strong{display:block;margin-bottom:8px}
+    .program-card p{
+      color:var(--muted);
+      line-height:1.7;
+      margin-bottom:6px;
+    }
+    .mini-tag{
       display:inline-block;
-      padding:12px 22px;
-      border:none;
-      border-radius:0;
-      background:#425644;
-      color:#eef3ea;
-      box-shadow:6px 6px 0 rgba(48,65,51,.15);
-      text-decoration:none;
-      font-size:.75rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      transition:.2s ease;
+      margin-top:24px;
+      width:max-content;
+      border:1px solid var(--line);
+      padding:9px 15px;
+      color:var(--wine);
+      font-size:.77rem;
+      font-weight:600;
     }
-    .btn:hover{
-      background:#334536;
-      color:#fff;
-      transform:translateY(-2px);
-      box-shadow:0 10px 20px rgba(74,91,74,.18);
-    }
-    .story{
-      background:linear-gradient(180deg,#d7e0d1,#c7d3c0);
-    }
-    .story-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:58px;align-items:center}
-    .story-image{
-      min-height:520px;
-      border-radius:0;
-      background:
-        linear-gradient(rgba(82,100,81,.03),rgba(82,100,81,.03)),
-        url('WhatsApp%20Image%202026-09-26%20at%2014.45.48%20(2).jpeg') center/cover no-repeat;
-      box-shadow:var(--shadow);
-      border:none;
-    }
-    .story-copy{padding:12px 0}
-    .story-copy .lead{margin:0;max-width:560px}
+
+    /* TRAVEL */
     .travel{
-      background:linear-gradient(135deg,#8ea283 0%,#b2c1a8 55%,#9daf93 100%);
-      box-shadow:none;
+      background:#f5eeeb;
     }
-    .travel-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center}
-    .travel-photo{
-      width:100%;
-      height:470px;
-      object-fit:cover;
-      display:block;
-      border-radius:0;
-      box-shadow:14px 14px 0 rgba(64,83,67,.14),var(--shadow);
-      border:none;
+    .travel-grid{
+      display:grid;
+      grid-template-columns:.88fr 1.12fr;
+      gap:66px;
+      align-items:center;
     }
-    .travel .lead{margin:0;max-width:560px;color:#526451}
+    .travel-copy h2{
+      font-size:clamp(4rem,7vw,6.6rem);
+      line-height:.92;
+      margin:18px 0 26px;
+      letter-spacing:-.04em;
+    }
+    .travel-copy .lead + .lead{margin-top:20px}
+    .cta{
+      display:inline-block;
+      margin-top:28px;
+      padding:15px 22px;
+      background:var(--wine);
+      color:white;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.88rem;
+    }
+    .travel-image{
+      min-height:460px;
+      background:
+        linear-gradient(rgba(60,35,45,.08),rgba(60,35,45,.08)),
+        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500&q=86') center/cover no-repeat;
+    }
+    .caption{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    /* GIFT */
+    .gift{
+      background:var(--rose);
+    }
+    .gift-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:72px;
+      align-items:center;
+    }
+    .gift h2{
+      font-size:clamp(4rem,7vw,6.4rem);
+      line-height:.9;
+      margin:18px 0 26px;
+    }
+    .gift-box{
+      background:var(--paper);
+      border-left:6px solid var(--wine-soft);
+      padding:46px 48px;
+      min-height:260px;
+    }
+    .gift-box h3{
+      font-family:'Manrope',sans-serif;
+      font-size:1.1rem;
+      font-weight:800;
+      margin-bottom:20px;
+    }
+    .gift-box p{
+      color:var(--muted);
+      line-height:1.75;
+    }
+    .gift-box .placeholder{
+      margin-top:18px;
+      font-style:italic;
+    }
+
+    /* DIRECTIONS */
+    .directions{background:#f7f2ef}
+    .direction-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      margin-top:46px;
+    }
+    .direction-card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      padding:40px;
+    }
+    .direction-card h3{
+      font-size:2.4rem;
+      margin-bottom:18px;
+    }
+    .direction-card p{
+      color:var(--muted);
+      line-height:1.65;
+      margin-bottom:6px;
+    }
+    .direction-card .cta{margin-top:22px}
+
+    /* RSVP */
     .rsvp{
-      background:linear-gradient(145deg,#405343,#566c57);
-      color:#fff;
-      box-shadow:inset 0 18px 32px rgba(255,255,255,.03);
+      background:linear-gradient(135deg,#f8f1ef 0%,#efdde1 100%);
     }
-    .rsvp h2,.rsvp .section-label{color:#fff}
-    .rsvp .lead{color:#e9efe5}
+    .rsvp-grid{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:80px;
+      align-items:center;
+    }
+    .rsvp h2{
+      font-size:clamp(4.2rem,7vw,6.5rem);
+      line-height:.9;
+      margin:18px 0 26px;
+    }
     .rsvp-box{
-      max-width:720px;
-      margin:42px auto 0;
-      padding:34px 28px;
-      border:none;
-      border-radius:0;
-      background:rgba(188,203,179,.12);
-      box-shadow:12px 12px 0 rgba(28,42,30,.18),0 20px 40px rgba(20,34,22,.18);
+      background:var(--paper);
+      border:1px solid var(--line);
+      padding:46px;
+    }
+    .rsvp-box h3{
+      font-family:'Manrope',sans-serif;
+      font-size:1.15rem;
+      font-weight:800;
+      margin-bottom:14px;
     }
     .rsvp-box p{
-      margin:0 0 22px;
-      color:#e9efe5;
-      line-height:1.7;
-      font-size:.95rem;
+      color:var(--muted);
+      line-height:1.75;
     }
-    .rsvp-btn{
-      display:inline-block;
-      padding:15px 26px;
-      border:1px solid #fff;
-      background:#d4dfce;
-      color:#334236;
-      border-radius:0;
-      box-shadow:6px 6px 0 rgba(25,40,28,.18);
-      text-decoration:none;
-      font:500 .78rem 'Manrope',sans-serif;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      transition:.2s;
-    }
-    .rsvp-btn:hover{background:transparent;color:#fff}
     .rsvp-note{
-      margin-top:16px;
-      font-size:.78rem;
-      opacity:.82;
-      letter-spacing:.03em;
+      margin-top:14px;
+      font-size:.8rem;
+      color:#8a767e;
     }
-    footer{background:#3f503f;color:#edf2ea;text-align:center;padding:34px 20px;font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.05em}
-    @media(max-width:780px){
-      section{padding:72px 18px}
-      .cards,.travel-grid{grid-template-columns:1fr}
-      .travel-photo{height:390px}
-      .nav-inner{gap:16px}
-      nav a{font-size:.68rem}
-      .card,.travel-photo{border-radius:0}
+
+    /* FOOTER */
+    footer{
+      background:var(--wine-dark);
+      color:#f7ebee;
+      padding:54px 0 58px;
+      text-align:center;
+    }
+    footer .footer-name{
+      font-family:'DM Serif Display',serif;
+      font-size:2rem;
+      margin-bottom:10px;
+    }
+    footer p{color:#d7bdc6}
+    .footer-track{
+      width:220px;
+      height:2px;
+      background:#b67a8f;
+      margin:24px auto 0;
+      position:relative;
+    }
+    .footer-track::after{
+      content:"";
+      position:absolute;
+      width:12px;height:12px;
+      border-radius:50%;
+      background:#f7ebee;
+      left:58%;
+      top:50%;
+      transform:translate(-50%,-50%);
+    }
+
+    @media(max-width:900px){
+      .nav-links{display:none}
+      .hero{padding:40px 0 60px}
+      .hero-grid,.travel-grid,.gift-grid,.rsvp-grid{grid-template-columns:1fr;gap:44px}
+      .hero h1{font-size:clamp(4.2rem,18vw,6.3rem)}
+      .hero-photo-wrap{padding:14px}
+      .hero-photo{max-height:none}
+      .trackline{display:none}
+      .program-grid,.direction-grid{grid-template-columns:1fr}
+      .hero-meta{grid-template-columns:1fr}
+      .meta-block,.meta-block + .meta-block{
+        border-left:0;
+        border-top:1px solid rgba(111,48,72,.2);
+        padding:15px 0;
+      }
+      .meta-block:first-child{border-top:0}
+      section{padding:78px 0}
+      .travel-image{min-height:340px}
+      .gift-box,.rsvp-box,.program-card,.direction-card{padding:30px}
     }
   </style>
 </head>
 <body>
-  <header class="hero" id="home">
-    <div class="hero-content">
-      <div class="kicker">Ci sposiamo</div>
-      <h1>Michela <span class="amp">&</span> Antonio</h1>
-      <div class="date">22 maggio 2027</div>
-    </div>
-    <div class="scroll">Scorri</div>
-  </header>
-
   <nav>
-    <div class="nav-inner">
-      <a href="#giornata">La giornata</a>
-      <a href="#viaggio">Viaggio</a>
-      <a href="#rsvp">RSVP</a>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">Michela & Antonio</a>
+      <div class="nav-links">
+        <a href="#giornata">La giornata</a>
+        <a href="#viaggio">Il viaggio</a>
+        <a href="#regalo">Il regalo</a>
+        <a href="#arrivare">Come arrivare</a>
+        <a href="#rsvp">Conferma presenza</a>
+      </div>
     </div>
   </nav>
 
-  <section class="details" id="giornata">
-    <div class="wrap center">
-      <div class="section-label">La nostra giornata</div>
-      <h2>22 maggio 2027</h2>
-      <p class="lead">Non vediamo l'ora di festeggiare insieme a voi. Qui trovate tutte le informazioni utili per raggiungerci.</p>
-      <div class="divider"></div>
+  <header class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Un giorno, la nostra canzone</div>
+        <h1>Michela <span class="amp">&</span><br>Antonio</h1>
+        <p class="hero-intro">Ci sposiamo! Non vediamo l'ora di vivere questa giornata insieme alle persone che amiamo.</p>
 
-      <div class="cards">
-        <article class="card">
-          <div class="section-label">Cerimonia</div>
-          <h3>Chiesa di San Giulio</h3>
-          <div class="meta">Cassano Magnago<br>ore 15:30</div>
-          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+San+Giulio+Cassano+Magnago">Indicazioni</a>
+        <div class="hero-meta">
+          <div class="meta-block">
+            <span class="meta-value">22 maggio 2027</span>
+            <span class="meta-label">Sabato</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-value">Ore 15:30</span>
+            <span class="meta-label">La cerimonia</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-value">Cassano Magnago</span>
+            <span class="meta-label">Chiesa di San Giulio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="hero-original.jpeg" alt="Michela e Antonio">
+        <div class="trackline" aria-hidden="true"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="program" id="giornata">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Lato A · La giornata</div>
+        <h2>Il programma</h2>
+        <p class="lead">Sabato 22 maggio 2027: dal nostro sì alla festa insieme.</p>
+      </div>
+
+      <div class="program-grid">
+        <article class="program-card">
+          <div class="number">01 / CERIMONIA</div>
+          <h3>Il nostro sì</h3>
+          <strong>Chiesa di San Giulio</strong>
+          <p>Cassano Magnago (VA)</p>
+          <p>Ore 15:30</p>
+          <span class="mini-tag">Cassano Magnago</span>
         </article>
-        <article class="card">
-          <div class="section-label">Ricevimento</div>
-          <h3>Villa Valentina</h3>
-          <div class="meta">Via Gaetano Donizetti 17<br>Tradate (VA)</div>
-          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Villa+Valentina+Via+Gaetano+Donizetti+17+Tradate">Indicazioni</a>
+
+        <article class="program-card">
+          <div class="number">02 / FESTA</div>
+          <h3>Festeggiamo insieme</h3>
+          <strong>Villa Valentina</strong>
+          <p>Tradate (VA)</p>
+          <p>Ricevimento dopo la cerimonia</p>
+          <span class="mini-tag">Dopo il sì</span>
         </article>
       </div>
     </div>
@@ -268,29 +496,88 @@
 
   <section class="travel" id="viaggio">
     <div class="wrap travel-grid">
-      <img class="travel-photo" src="WhatsApp%20Image%202026-09-26%20at%2014.45.49%20(1).jpeg" alt="Michela e Antonio in viaggio">
+      <div class="travel-copy">
+        <div class="eyebrow">La prossima traccia</div>
+        <h2>In viaggio<br>per l'Europa</h2>
+        <p class="lead">Il nostro viaggio di nozze sarà un road trip in Europa.</p>
+        <p class="lead">Se volete contribuire alle spese del viaggio, ci aiuterete a riempire questa nuova avventura di ricordi.</p>
+        <a class="cta" href="#regalo">Un pensiero per il viaggio</a>
+      </div>
       <div>
-        <div class="section-label">Viaggio di nozze</div>
-        <h2>Un road trip in Europa</h2>
-        <p class="lead">Il regalo più bello sarà avervi con noi. Se però volete contribuire alle spese del nostro viaggio, ci aiuterete a riempire di nuovi ricordi il primo viaggio da marito e moglie.</p>
+        <div class="travel-image" role="img" aria-label="Strada panoramica tra le montagne europee"></div>
+        <div class="caption">La nostra prossima avventura, un chilometro alla volta.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gift" id="regalo">
+    <div class="wrap gift-grid">
+      <div>
+        <div class="eyebrow">Un pensiero per noi</div>
+        <h2>Il regalo<br>più bello</h2>
+        <p class="lead">Il regalo più bello sarà avervi con noi. Se desiderate contribuire al nostro viaggio di nozze, troverete qui le informazioni.</p>
+      </div>
+      <div class="gift-box">
+        <h3>Regalo per il viaggio di nozze</h3>
+        <p class="placeholder">IBAN e intestatario saranno aggiunti dagli sposi.</p>
+        <p>Questa sezione è ancora in preparazione.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="directions" id="arrivare">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Ci vediamo qui</div>
+        <h2>Come arrivare</h2>
+        <p class="lead">Le indicazioni per raggiungere la cerimonia e il ricevimento.</p>
+      </div>
+
+      <div class="direction-grid">
+        <article class="direction-card">
+          <h3>La cerimonia</h3>
+          <p><strong>Chiesa di San Giulio</strong></p>
+          <p>Cassano Magnago (VA)</p>
+          <p>Ore 15:30</p>
+          <a class="cta" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chiesa+di+San+Giulio+Cassano+Magnago">Indicazioni per la chiesa ↗</a>
+        </article>
+
+        <article class="direction-card">
+          <h3>La festa</h3>
+          <p><strong>Villa Valentina</strong></p>
+          <p>Via Gaetano Donizetti 17, Tradate (VA)</p>
+          <p>Ricevimento dopo la cerimonia.</p>
+          <a class="cta" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Villa+Valentina+Via+Gaetano+Donizetti+17+Tradate">Indicazioni per Villa Valentina ↗</a>
+        </article>
       </div>
     </div>
   </section>
 
   <section class="rsvp" id="rsvp">
-    <div class="wrap center">
-      <div class="section-label">Conferma presenza</div>
-      <h2>Ci sarete?</h2>
-      <p class="lead">È gradita gentile conferma entro febbraio 2027.</p>
+    <div class="wrap rsvp-grid">
+      <div>
+        <div class="eyebrow">Un posto per voi</div>
+        <h2>Ci sarete?</h2>
+        <p class="lead">Confermate la vostra presenza e indicate quante persone sarete. Nel modulo potrete anche segnalarci eventuali allergie o intolleranze.</p>
+      </div>
+
       <div class="rsvp-box">
-        <p>Con il modulo potrete indicarci se sarete presenti, quante persone parteciperanno e segnalarci eventuali allergie o intolleranze.</p>
-        <a class="rsvp-btn" id="rsvpButton" href="#" target="_blank" rel="noopener">Conferma la tua presenza</a>
-        <div class="rsvp-note">Il modulo RSVP sarà disponibile qui a breve.</div>
+        <h3>Conferma presenza</h3>
+        <p>Il modulo raccoglierà nome, presenza, numero di partecipanti, eventuali bambini, allergie o intolleranze e una nota facoltativa.</p>
+        <a class="cta" id="rsvpButton" href="#" target="_blank" rel="noopener">Compila il modulo</a>
+        <div class="rsvp-note">Il Google Form verrà collegato qui appena sarà pronto.</div>
       </div>
     </div>
   </section>
 
-  <footer>Michela & Antonio · 22 maggio 2027</footer>
+  <footer>
+    <div class="wrap">
+      <div class="footer-name">Michela & Antonio</div>
+      <p>Ci vediamo presto sulla pista da ballo.</p>
+      <div class="footer-track" aria-hidden="true"></div>
+    </div>
+  </footer>
+
   <script>
     const GOOGLE_FORM_URL = "";
     const rsvpButton = document.getElementById("rsvpButton");
